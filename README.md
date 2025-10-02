@@ -27,7 +27,8 @@ Key Questions:
 
 # II. Approach
 
-![Flowchart]([images/Flowchart.png](https://github.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/blob/main/images/images/Flowchart.png))  
+![Flowchart](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Flowchart.png)
+
 
 
 
