@@ -27,6 +27,7 @@ Key Questions:
 
 # II. Approach
 
-![Flowchart] (images/images/Flowchart.png) 
+![Flowchart](images/Flowchart.png)
+
 
 
