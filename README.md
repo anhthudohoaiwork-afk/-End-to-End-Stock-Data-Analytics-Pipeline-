@@ -77,9 +77,8 @@ _ Checked using df.isnull().sum() → no missing values detected
 
                     mean(pct_change) + 2 x std(pct_change) → threshold1
                     mean(pct_change) -2 x std(pct_change) → threshold2
-   
-   Pct change > threshold1 -> Positive outlier
-   Pct change < threshold 2 ->  Negative outlier 
+                    pct change > threshold1 -> Positive outlier
+                    pct change < threshold 2 ->  Negative outlier 
 
 *  **Result:** Most days  = Normal, some days = Outlier
 
