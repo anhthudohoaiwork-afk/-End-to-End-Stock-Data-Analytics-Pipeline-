@@ -16,7 +16,7 @@ You can preview it below and click the link to interact with the live version.
 👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/xxxxxxx)
 
 
-**Key   Questions:**
+## **Key   Questions:**
 
 **1. Data Quality & Processing** 
 *   How much preprocessing or standardization does raw data require before analysis?
@@ -55,22 +55,22 @@ You can preview it below and click the link to interact with the live version.
 *  **Modeling:** Scikit-learn (Linear Regression, Pipeline) applied to validate relationships between input variables and closing price
 
 # IV. Data Processing
-**1. Data Collection & Overview**
+### **1. Data Collection & Overview**
 *    *Dataset:* 6 files (3 raw, 3 historical) for VCB, VIB, VIC
 *    *Key columns (file raw):* time, open, high, low, close, volume, ticker
 *    *Key columns (file hist):* Ngày, Đóng cửa, Mở cửa, Cao nhất, Thấp nhất, Khối lượng, % Thay đổi
 
-**2. Handling Duplicate Values**
+### **2. Handling Duplicate Values**
 
 *  **Check duplicates across all datasets:** Checked duplicates across all 6 files csv (raw/ historical) for all 3 stock tickers (VCB, VIB, VIC). No duplicate rows were found, however, when checking the specific column “Date”, all 3 raw files showed duplicate entries on Date “2022-12-27”, with Open/High/Low/Close values showing minor (insignificant) differences, but large volume discrepancies. 
 
 *   **Solution:** Drop duplicates, keep the last row (prioritizing the row with higher volume). For the data to be joinable in both raw and historical files, duplicates must be removed, keeping the row with the larger volume (higher volume usually reflects the full and valid total trading volume (higher volume usually reflects the full and valid total trading volume) 
 
-**3. Handling Missing Values**
+### **3. Handling Missing Values**
 
 _ Checked using df.isnull().sum() → no missing values detected
 
-**4.  Error Correction & Outlier Handling**
+### **4.  Error Correction & Outlier Handling**
 *   **Error Correction:** Historical file – The Volume column has K, M notation in str/object format. To facilitate calculation queries, convert to numeric format (K corresponds to e3, M corresponds to e6). Example: 11.57M = 11570000, 996.80K = 996.8. Pct_change from % → float. Example: 0.33% = 0.0033.
 
 *    **Outlier Detection:** Calculate the mean of pct change, stddev of pct change. Then find the threshold to filter out outlier days.
@@ -229,7 +229,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 # VI. Insights and Visualization
 
-**1. Data Quality and Validation**
+### **1. Data Quality and Validation**
 
 
 ![Consistency Check](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Consistency%20Check.png)
@@ -244,7 +244,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Insight:** Data in the raw and hist files almost match, with only a few minor discrepancies for VCB and VIB tickers. The data is almost identical for the VIC ticker. Data is reliable enough for analysis.
 
 
-**2. Stock-level Trends**
+### **2. Stock-level Trends**
 
 ![Top 5 gainers/losers by VCB](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Top%205%20gainers%3A%20losers%20by%20VCB.png)
 
@@ -297,7 +297,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 - However, VIC has the largest fluctuation among the 3 tickers, indicating strong liquidity volatility and less stability compared to the banking group (VCB, VIB).
 
 
-**3. Sector-level Trends**
+### **3. Sector-level Trends**
 
 ![Sector Volume Share](images/images/Sector%20Volume%20share.png) 
 
@@ -317,7 +317,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 - VIC has the largest total trading volume (100% within the sector) but recorded a negative average daily change (-6%), reflecting a significant downward price trend during the observation period.
 
 
-**4. Advanced Analysis (Outliers & Volatility)**
+### **4. Advanced Analysis (Outliers & Volatility)**
 
 ![VCB - Outlier Days by % Change](images/images/VCB%20-%20Outlier%20days%20by%20pct%20change%20.png)
 
@@ -369,7 +369,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 - Unlike VIB, VIC's long-term trend has almost no growth remaining, stabilizing around 0.
 
 
-**5. Modeling Result** 
+### **5. Modeling Result** 
 
 ![VCB - Actual vs Predicted Price](images/images/VCB%20-%20Actual%20vs%20Predicted%20Price.png)
 
