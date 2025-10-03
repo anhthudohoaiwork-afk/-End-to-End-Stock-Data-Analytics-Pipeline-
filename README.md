@@ -90,9 +90,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 
 #  V. Analysis and Results
-**1. Section 1: Data Validation** 
+## **1. Section 1: Data Validation** 
 
-*  **Business Question:** Is the % change in the raw and historical files consistent?
+###  **Business Question:** Is the % change in the raw and historical files consistent?
 *  **Approach (Key Steps):**
 
         _ Calculate % change from raw data using LAG(close_price)
@@ -103,9 +103,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 *  **Output:** The distribution of the diff is close to 0 (for all 3 tickers, with VIC having almost no different) → data in raw and historical files is mostly consistent, with only a few minor (insignificant) discrepancies
 
 
-**2. Section 2: Stock-level trend** 
+## **2. Section 2: Stock-level trend** 
 
-*  **Business Question:** Which day did the stock increase/ decrease the most?
+###  **Business Question:** Which day did the stock increase/ decrease the most?
 *  **Approach (Key steps):**
 
        _ Calculate % change and daily change using LAG(close_price)
@@ -114,7 +114,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 *  **SQL Snippet:** *“Full query available on Colab/ Appendix”*
 *  **Output:** Top 5 days the stocks (VCB, VIB, VIC) increased/decreased the most
 
-*  **Business Question:** Total trading volume monthly/quarterly?
+###  **Business Question:** Total trading volume monthly/quarterly?
 *  **Approach (Key steps):**
 
            _ Calculate total volume by month using GROUP BY year, month
@@ -122,7 +122,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 *  **SQL Snippet:** *“Full query available on Colab/ Appendix”*
 
-*  **Business Question:** How does the % change fluctuate across quarters?
+###  **Business Question:** How does the % change fluctuate across quarters?
 *  **Approach (Key Steps):**
 
         _ Format to quarter, use FLOOR((month-1)/3) +1
@@ -135,21 +135,20 @@ _ Checked using df.isnull().sum() → no missing values detected
 *  **Output:** AVG of % change by quarter
 
 
-**3. Section 3: Sector-level trend** 
+## **3. Section 3: Sector-level trend** 
 
- **Business Question:** Total trading volume of the sector, and the percentage contribution to the sector? 
+### **Business Question:** Total trading volume of the sector, and the percentage contribution to the sector? 
  **Approach (Key steps):**
 
-
-              _ JOIN the metadata table with the stock_prices_raw table to get the Sector, use GROUP BY sector
-              to calculate the total trading volume of the industry  
-              _ Create a CTE calculating volume by ticker and volume by sector 
+             _ JOIN the metadata table with the stock_prices_raw table to get the Sector, use GROUP
+             BY sector to calculate the total trading volume of the industry  
+             _ Create a CTE calculating volume by ticker and volume by sector 
 
 *  **SQL Snippet:** *“Full query available on Colab/ Appendix”*
 *  **Output:** VIB has the largest trading volume among the 2 bank sector stocks, with an insignificant difference compared to the leading ticker, VIC.  
 
 
- **Business Question:** Which sector has better performance monthly/quarterly?
+### **Business Question:** Which sector has better performance monthly/quarterly?
 **Approach (Key steps):**
 
                _ JOIN to retrieve the sector from the metadata table (stocks)
@@ -162,9 +161,9 @@ _ Checked using df.isnull().sum() → no missing values detected
               _ AVG of % change by sector 
 
 
-**4. Section 4:  Advanced Analysis**
+## **4. Section 4:  Advanced Analysis**
 
- **Business Question:** Identify outlier days, volatility?
+### **Business Question:** Identify outlier days, volatility?
  **Approach (Key steps):**  
 
              _ Determine the threshold by calculating the mean and std of % change
@@ -175,9 +174,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Output:** Most are normal days, with only a few Positive increase or Negative decrease days in the Q1-2020 period (for all 3 tickers).
 
 
-**Descriptive Statistics**
+## **Descriptive Statistics**
 
-**Business Question:** Basic statistics (Mean, Median, Std for Open/Close/Volume)? 
+### **Business Question:** Basic statistics (Mean, Median, Std for Open/Close/Volume)? 
 **Approach (Key steps):**
 
                _ Filter data by each stock ticker
@@ -189,9 +188,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Output:** Table of statistics including count, mean, std, min, max, quartiles for each stock ticker
 
 
-**Correlation Analysis**
+## **Correlation Analysis**
 
-**Business Question:** Which factor has the strongest correlation with the closing price?   
+### **Business Question:** Which factor has the strongest correlation with the closing price?   
 **Approach (Key steps):** 
 
                 _ Select independent vars: Open, High, Low, Volume, Pct_change
@@ -202,14 +201,14 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Output:** Open/ high/ low price have corr > 0.99 with the closing price, almost absolute
 
 
-**Prediction Model**
+## **Prediction Model**
 
-**Business Question:** Can the closing price (Close Price) be predicted from the variables Open, High, Low? 
+### **Business Question:** Can the closing price (Close Price) be predicted from the variables Open, High, Low? 
 **Approach (Key steps):** 
 
                 _ Select input variables (based on corr): open_price, high_price, low_price
-                _ Use a Pipeline consisting of StandardScaler() for data standardization and LinearRegression()
-                for training 
+                _ Use a Pipeline consisting of StandardScaler() for data standardization and
+                LinearRegression() for training 
                 _ Train for each stock ticker and evaluate using R^2 and MSE
                 _ Compare Actual vs Predicted using a distribution chart 
 
