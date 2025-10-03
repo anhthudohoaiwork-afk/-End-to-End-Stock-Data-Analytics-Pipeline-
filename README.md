@@ -219,9 +219,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 **Output:** 
 
-          * VCB - R^2 ≈ 0.997, MSE ≈ 0.34
-          * VIB - R^2 ≈ 0,998, MSE ≈ 0.08
-          * VIC - R^2 ≈ 0.998, MSE ≈ 0.71 
+           VCB - R^2 ≈ 0.997, MSE ≈ 0.34
+           VIB - R^2 ≈ 0,998, MSE ≈ 0.08
+           VIC - R^2 ≈ 0.998, MSE ≈ 0.71 
 
 **Result:** High R², the model explains Close Price well
 
