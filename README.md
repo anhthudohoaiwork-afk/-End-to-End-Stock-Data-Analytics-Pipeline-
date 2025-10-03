@@ -384,6 +384,17 @@ _ Checked using df.isnull().sum() → no missing values detected
 - Because the linear model is too simple, it is only suitable for verifying the relationship but does not fully reflect market factors (news, macroeconomics, investor sentiment).
 
 
+## 📊 Interactive Dashboard
+
+This project also includes an **interactive dashboard** for exploring stock data.  
+You can preview it below and click the link to interact with the live version.
+
+![Dashboard Preview](images/dashboard_preview.png)
+
+👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/xxxxxxx)
+
+
+
 # VII. Conclusion
 
 - This project strengthened my skills in data cleaning (handling numeric formats, K/M, %), data quality checks (duplicates, outliers, consistency), statistical analysis with visualization, and building a basic Linear Regression model.
