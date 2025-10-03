@@ -145,6 +145,7 @@ _ Checked using df.isnull().sum() → no missing values detected
              _ Create a CTE calculating volume by ticker and volume by sector 
 
 *  **SQL Snippet:** *“Full query available on Colab/ Appendix”*
+  
 *  **Output:** VIB has the largest trading volume among the 2 bank sector stocks, with an insignificant difference compared to the leading ticker, VIC.  
 
 
