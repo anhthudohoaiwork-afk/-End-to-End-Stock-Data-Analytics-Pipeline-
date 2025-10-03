@@ -156,6 +156,7 @@ _ Checked using df.isnull().sum() → no missing values detected
                _ Calculate daily change and % change using LAG(close_price)
 
  **SQL Snippet:** *“Full query available on Colab/ Appendix”*
+ 
  **Output:** 
 
               _ AVG of daily change by sector 
