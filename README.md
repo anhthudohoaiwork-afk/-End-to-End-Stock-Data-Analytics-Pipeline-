@@ -95,9 +95,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 *  **Business Question:** Is the % change in the raw and historical files consistent?
 *  **Approach (Key Steps):**
 
-   _ Calculate % change from raw data using LAG(close_price)
-   _ Compare with the existing % change in the historical file
-   _ Measure the difference to detect inconsistency
+        _ Calculate % change from raw data using LAG(close_price)
+        _ Compare with the existing % change in the historical file
+        _ Measure the difference to detect inconsistency
 
 *  **SQL Snippet:** *“Full query available on Colab/ Appendix”*
 *  **Output:** The distribution of the diff is close to 0 (for all 3 tickers, with VIC having almost no different) → data in raw and historical files is mostly consistent, with only a few minor (insignificant) discrepancies
