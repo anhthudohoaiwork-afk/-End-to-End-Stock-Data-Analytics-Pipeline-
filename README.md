@@ -389,7 +389,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 This project also includes an **interactive dashboard** for exploring stock data.  
 You can preview it below and click the link to interact with the live version.
 
-![Dashboard Preview](images/dashboard_preview.png)
+![Dashboard Preview](images/images/dashboard_preview.png)
 
 👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/xxxxxxx)
 
