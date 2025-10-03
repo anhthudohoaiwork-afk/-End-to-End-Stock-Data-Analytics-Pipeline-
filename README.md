@@ -6,6 +6,16 @@ The project goal is to build a stock data processing pipeline from multiple sour
      (3) Statistical analysis, trends, and relationships 
      (4) Create a foundation for the closing price (close_price) prediction model
 
+## 📊 Interactive Dashboard
+
+This project also includes an **interactive dashboard** for exploring stock data.  
+You can preview it below and click the link to interact with the live version.
+
+![Dashboard Preview](images/images/dashboard_preview.png)
+
+👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/xxxxxxx)
+
+
 **Key   Questions:**
 **1. Data Quality & Processing** 
 *   How much preprocessing or standardization does raw data require before analysis?
@@ -382,16 +392,6 @@ _ Checked using df.isnull().sum() → no missing values detected
 - The result shows very high R-squared (0.997 ~ 0.998) for all 3 tickers → the model explains the closing price almost perfectly.
 - The result shows the closing price directly depends on open/high/low with corr > 0.99. However, volume and pct change do not significantly influence it (with corr near 0) → investors wanting to predict short-term closing prices may only need to monitor the opening/high/low prices during the day.  
 - Because the linear model is too simple, it is only suitable for verifying the relationship but does not fully reflect market factors (news, macroeconomics, investor sentiment).
-
-
-## 📊 Interactive Dashboard
-
-This project also includes an **interactive dashboard** for exploring stock data.  
-You can preview it below and click the link to interact with the live version.
-
-![Dashboard Preview](images/images/dashboard_preview.png)
-
-👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/xxxxxxx)
 
 
 
