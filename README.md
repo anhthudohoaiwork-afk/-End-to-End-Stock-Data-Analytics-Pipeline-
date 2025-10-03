@@ -1,9 +1,10 @@
 # I. Project Overview
 The project goal is to build a stock data processing pipeline from multiple sources (raw/historical):
-(1) Clean and standardize data (data format, numbers, K/M notation) 
-(2) Check data quality (missing values, duplicates, outliers, consistency) 
-(3) Statistical analysis, trends, and relationships 
-(4) Create a foundation for the closing price (close_price) prediction model
+
+     (1) Clean and standardize data (data format, numbers, K/M notation) 
+     (2) Check data quality (missing values, duplicates, outliers, consistency) 
+     (3) Statistical analysis, trends, and relationships 
+     (4) Create a foundation for the closing price (close_price) prediction model
 
 **Key   Questions:**
 **1. Data Quality & Processing** 
@@ -30,6 +31,8 @@ The project goal is to build a stock data processing pipeline from multiple sour
 # II. Approach
 
 ![Flowchart](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Flowchart.png)
+
+*Fig 2.1. Flowchart*
 
 # III. Tech Stack Used
 
@@ -71,6 +74,8 @@ _ Checked using df.isnull().sum() → no missing values detected
 *  **Visualization:** Bar chart of outlier days
 
 ![Distribution of Outlier Days](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Distribution%20of%20Outlier%20Days.png)
+
+*Fig 4.1. Distribution of Outlier Days*
 
 
 #  V. Analysis and Results
@@ -202,9 +207,9 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 **Output:** 
 
-        *  VCB - R^2 ≈ 0.997, MSE ≈ 0.34
-        *  VIB - R^2 ≈ 0,998, MSE ≈ 0.08
-        *  VIC - R^2 ≈ 0.998, MSE ≈ 0.71 
+          * VCB - R^2 ≈ 0.997, MSE ≈ 0.34
+          * VIB - R^2 ≈ 0,998, MSE ≈ 0.08
+          * VIC - R^2 ≈ 0.998, MSE ≈ 0.71 
 
 **Result:** High R², the model explains Close Price well
 
@@ -217,5 +222,172 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 ![Consistency Check](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Consistency%20Check.png)
 
+*Fig 6.1. PCT Change (Raw vs Hist) – Consistency Check*
+
 ![Distribution of pct_change](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Distribution%20of%20pct_change%20.png)
+
+*Fig 6.2. Distribution of % change difference (Raw vs Hist)*
+
+
+**Insight:** Data in the raw and hist files almost match, with only a few minor discrepancies for VCB and VIB tickers. The data is almost identical for the VIC ticker. Data is reliable enough for analysis.
+
+
+**2. Stock-level Trends**
+
+![Top 5 gainers/losers by VCB](https://raw.githubusercontent.com/anhthudohoaiwork-afk/-End-to-End-Stock-Data-Analytics-Pipeline-/main/images/images/Top%205%20gainers%3A%20losers%20by%20VCB.png)
+
+*Fig 6.3. Top 5 gainers/ losers by ticker (VCB)*
+
+*[View Full Interactive Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/5d6d919d-5183-4e6b-8ae0-638ccbc46fb1)*
+
+**Insight:**  
+**VCB**  
+- **Largest Daily change:** +4.23 (*price increased from 67.74 → 71.97*) on 02-12-2022.  
+- **Highest % change:** +6.89% on 25-03-2020, *when the closing price was only 40.33 – the lowest level among top gainers*.  
+- **Strongest decrease:** 06-12-2022, *daily change -4.23 and % change -5.88%*, far exceeding the normal fluctuation range (1–2%).  
+⇒ *Generally, VCB experienced strong volatility during the COVID-19 pandemic period (2020) and late 2022.*  
+
+**VIB**  
+- **Largest Daily change:** +1.76 (*closing price 27.31*) on 31-12-2021.  
+- **Highest % change:** +10.84% on 06-10-2020, *far exceeding the normal level → clear outlier.*  
+- **Strongest decrease:** 14-07-2021, *daily change -1.91 and % change -6.94%*, meaning a decrease of nearly 7% in a single day.  
+⇒ *VIB has an extremely large % change amplitude (both up and down), indicating higher volatility than VCB.*  
+
+**VIC**  
+- **Largest Daily change:** +7.73 (*price increased from 117.32 → 125.05*) on 13-04-2021.  
+- **Highest % change:** +6.99% on 25-03-2020.  
+- **Strongest decrease:** 28-01-2021, *% change -7%*, meaning a 7% decrease in one session – classified as a negative outlier.  
+⇒ *Compared to VCB and VIB, VIC has the highest daily change amplitude, indicating this stock fluctuates more strongly than the two bank tickers.*
+
+
+![Quarterly Trading Volume by VCB](images/images/Quarterly%20Trading%20Volume%20by%20VCB.png)
+
+*Fig 6.4. Quarterly Trading Volume by ticker (VCB)*
+
+*[View Full Interactive Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/5d6d919d-5183-4e6b-8ae0-638ccbc46fb1)*
+
+
+**Insight:**  
+
+**VCB**  
+- **Trading volume peaked:** Q2-2021 (*134,256,300*).  
+- **Lowest:** Q4-2023 (*20,566,600*), however, *as the data only goes up to November, it does not fully reflect the entire quarter.*  
+- *Overall, VCB has relatively stable trading volume over the years, with less extreme fluctuations compared to VIB and VIC.*  
+
+**VIB**  
+- **Peaked:** Q3-2023 (*344,466,200*), *showing an explosion in liquidity during this period.*  
+- **Lowest:** Q1-2021 (*47,142,400*), *potentially due to the impact of the Covid-19 pandemic context.*  
+- *Notably, Q2-2023 also recorded high volume (*340,812,700*), an increase of about 62% compared to the immediately preceding quarter, showing a strong flow of capital into this stock.*  
+
+**VIC**  
+- **Volume peaked:** Q3-2023 (*733,998,200*), *surpassing other quarters and significantly higher than VCB, VIB.*  
+- **Lowest:** Q3-2020 (*30,909,510*), then *steadily increased over the years.*  
+- *However, VIC has the largest fluctuation among the 3 tickers, indicating strong liquidity volatility and less stability compared to the banking group (VCB, VIB).*
+
+
+**3. Sector-level Trends**
+
+![Sector Volume Share](images/images/Sector%20Volume%20share.png)
+
+
+*Fig 6.5. Sector Volume share*
+
+*[View Full Interactive Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/5d6d919d-5183-4e6b-8ae0-638ccbc46fb1)*
+
+
+**Insight:**  
+
+**Bank sector**  
+- *VIB accounts for 66.2% of trading volume, nearly double VCB (33.8%).* **This shows VIB has higher liquidity within the same industry.**  
+- *However, VCB has the highest average daily change rate (~3%), indicating that VCB stock price generally fluctuates more strongly than VIB (only ~1%).*  
+
+**Non-bank group**  
+- *VIC has the largest total trading volume (100% within the sector) but recorded a negative average daily change (-6%), reflecting a significant downward price trend during the observation period.*
+
+
+**4. Advanced Analysis (Outliers & Volatility)**
+
+![VCB - Outlier Days by % Change](images/images/VCB%20-%20Outlier%20days%20by%20pct%20change%20.png)
+
+*Fig 6.6. Outlier days by pct change (VCB)*
+
+*[View Full Interactive Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/5d6d919d-5183-4e6b-8ae0-638ccbc46fb1)*
+
+
+**Insight:**  
+
+**VCB**  
+- *Recorded multiple consecutive negative outliers in March 2020 (decreased >–6%/day), reflecting the period when the market was heavily impacted by COVID-19.*  
+- *Subsequently, positive outliers appeared in April 2020 (increased >+6%/day), showing a short-term recovery after the initial shock.*  
+- *Furthermore, in 2021–2022, there were scattered days with volatility >±5% but less frequent than the early 2020 period.*  
+
+**VIB**  
+- *Multiple negative outliers appeared in 2020–2021 (decreased 6–11%/day), notably a decrease of –10.93% on 23/03/2020.*  
+- *Conversely, there was a strong sequence of positive outliers from late 2020 into 2021 (continuously increased >+6%/day, peaking at 10.84% on 06/10/2020).*  
+- *Notably, in Q2/2022 there were many days with increase/decrease >±6%, reflecting a period of strong market fluctuation after COVID.*  
+
+**VIC**  
+- *Most volatile among the 3 tickers: continuously having both positive and negative outliers.*  
+- *March 2020: many days of deep decline (–6 to –7%), followed by a strong rebound on 25–27/03/2020 (+6–7%).*  
+- *Q4/2022 – Q3/2023: concentrated many positive outliers (≈+7%), accompanied by days of deep decline (–6% to –7%).*  
+- *Overall, VIC has a denser frequency of outliers than VCB and VIB → irregular price fluctuation, higher risk level.*
+
+![VCB - Rolling Returns (7 days vs. 30 days)](images/images/VCB%20-%20Rolling%20Returns%20(7days%20vs.%2030%20days).png)
+
+
+*Fig 6.7. VCB - Rolling Returns (7days vs. 30 days)*
+
+*[View Full Interactive Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/5d6d919d-5183-4e6b-8ae0-638ccbc46fb1)*
+
+**Insight:**  
+
+**VCB – Most stable in the long term**  
+- *The 30-day moving average tends to decrease over time.*  
+- *The 7-day fluctuation frequently crosses above and below the 30-day line, showing relatively strong short-term volatility compared to the long-term trend.*  
+- *After the initial period, the 30-day rolling average gradually approaches 0 → indicating that VCB's average daily return tends to stabilize, no longer as high as before.*  
+
+**VIB – Still maintains positive growth but high volatility**  
+- *The 30-day rolling average tends to decrease but has not yet hit the 0 threshold, with the lowest point around 0.13.*  
+- *This means VIB still maintains a positive average growth rate, but returns are thinning out.*  
+- *The 7-day fluctuation is very strong, indicating much larger short-term volatility than VCB.*  
+
+**VIC – Clear long-term volatile trend, high volatility risk**  
+- *The 30-day rolling average declines close to 0, especially clear after the Covid-19 period.*  
+- *At many points, the 7-day rolling average falls to quite deep negative levels (below -2%), reflecting significant short-term volatility risk.*  
+- *Unlike VIB, VIC's long-term trend has almost no growth remaining, stabilizing around 0.*
+
+
+**5. Modeling Result** 
+
+![VCB - Actual vs Predicted Price](images/images/VCB%20-%20Actual%20vs%20Predicted%20Price.png)
+
+![VIB - Actual vs Predicted Price](images/images/VIB%20-%20Actual%20vs%20Predicted%20Price.png)
+
+![VIC - Actual vs Predicted Price](images/images/VIC%20-%20Actual%20vs%20Predicted%20Price.png)
+
+
+**Insight:**  
+
+**VCB**  
+- **R² ~ 0.997, MSE ~ 0.337 → close price prediction almost perfectly matches reality.**  
+
+**VIB**  
+- **R² ~ 0.998, MSE ~ 0.079 → best model fit, very low prediction error.**  
+
+**VIC**  
+- **R² ~ 0.998, MSE ~ 0.71 → still accurate but higher error than the two VCB/VIB tickers, possibly due to VIC's stronger price volatility.**  
+
+**Input explanation:**  
+- The Linear Regression model was trained with independent variables Open, High, Low to predict the closing price of each stock ticker.  
+- The result shows very high R-squared (0.997 ~ 0.998) for all 3 tickers → the model explains the closing price almost perfectly.
+- The result shows the closing price directly depends on open/high/low with corr > 0.99. However, volume and pct change do not significantly influence it (with corr near 0) → investors wanting to predict short-term closing prices may only need to monitor the opening/high/low prices during the day.  
+- Because the linear model is too simple, it is only suitable for verifying the relationship but does not fully reflect market factors (news, macroeconomics, investor sentiment).
+
+
+# VII. Conclusion
+
+- This project strengthened my skills in data cleaning (handling numeric formats, K/M, %), data quality checks (duplicates, outliers, consistency), statistical analysis with visualization, and building a basic Linear Regression model.
+- **Key takeaway:** Clean and standardized data is the foundation of reliable analysis. 
+- **Next steps:** Expand the dataset with diverse tickers and macroeconomic indicators for a more comprehensive view of the Vietnam stock market, and apply advanced forecasting models to improve price prediction and support investor decision-making.
+
 
