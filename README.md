@@ -255,14 +255,14 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Insight:**  
 **VCB**  
 - **Largest Daily change:** +4.23 (*price increased from 67.74 → 71.97*) on 02-12-2022.  
-- **Highest % change:** +6.89% on 25-03-2020, *when the closing price was only 40.33 – the lowest level among top gainers*.  
-- **Strongest decrease:** 06-12-2022, *daily change -4.23 and % change -5.88%*, far exceeding the normal fluctuation range (1–2%).  
+- **Highest % change:** +6.89% on 25-03-2020, when the closing price was only 40.33 – the lowest level among top gainers.  
+- **Strongest decrease:** 06-12-2022, daily change -4.23 and % change -5.88%, far exceeding the normal fluctuation range (1–2%).  
 ⇒ *Generally, VCB experienced strong volatility during the COVID-19 pandemic period (2020) and late 2022.*  
 
 **VIB**  
 - **Largest Daily change:** +1.76 (*closing price 27.31*) on 31-12-2021.  
-- **Highest % change:** +10.84% on 06-10-2020, *far exceeding the normal level → clear outlier.*  
-- **Strongest decrease:** 14-07-2021, *daily change -1.91 and % change -6.94%*, meaning a decrease of nearly 7% in a single day.  
+- **Highest % change:** +10.84% on 06-10-2020, far exceeding the normal level → clear outlier.  
+- **Strongest decrease:** 14-07-2021, daily change -1.91 and % change -6.94%, meaning a decrease of nearly 7% in a single day.  
 ⇒ *VIB has an extremely large % change amplitude (both up and down), indicating higher volatility than VCB.*  
 
 **VIC**  
@@ -283,18 +283,18 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 **VCB**  
 - **Trading volume peaked:** Q2-2021 (*134,256,300*).  
-- **Lowest:** Q4-2023 (*20,566,600*), however, *as the data only goes up to November, it does not fully reflect the entire quarter.*  
+- **Lowest:** Q4-2023 (*20,566,600*), however, as the data only goes up to November, it does not fully reflect the entire quarter. 
 - *Overall, VCB has relatively stable trading volume over the years, with less extreme fluctuations compared to VIB and VIC.*  
 
 **VIB**  
-- **Peaked:** Q3-2023 (*344,466,200*), *showing an explosion in liquidity during this period.*  
-- **Lowest:** Q1-2021 (*47,142,400*), *potentially due to the impact of the Covid-19 pandemic context.*  
-- *Notably, Q2-2023 also recorded high volume (*340,812,700*), an increase of about 62% compared to the immediately preceding quarter, showing a strong flow of capital into this stock.*  
+- **Peaked:** Q3-2023 (*344,466,200*), showing an explosion in liquidity during this period. 
+- **Lowest:** Q1-2021 (*47,142,400*), potentially due to the impact of the Covid-19 pandemic context.
+- Notably, Q2-2023 also recorded high volume (*340,812,700*), an increase of about 62% compared to the immediately preceding quarter, showing a strong flow of capital into this stock. 
 
 **VIC**  
-- **Volume peaked:** Q3-2023 (*733,998,200*), *surpassing other quarters and significantly higher than VCB, VIB.*  
-- **Lowest:** Q3-2020 (*30,909,510*), then *steadily increased over the years.*  
-- *However, VIC has the largest fluctuation among the 3 tickers, indicating strong liquidity volatility and less stability compared to the banking group (VCB, VIB).*
+- **Volume peaked:** Q3-2023 (*733,998,200*), surpassing other quarters and significantly higher than VCB, VIB. 
+- **Lowest:** Q3-2020 (*30,909,510*), then steadily increased over the years. 
+- However, VIC has the largest fluctuation among the 3 tickers, indicating strong liquidity volatility and less stability compared to the banking group (VCB, VIB).
 
 
 **3. Sector-level Trends**
@@ -310,11 +310,11 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Insight:**  
 
 **Bank sector**  
-- *VIB accounts for 66.2% of trading volume, nearly double VCB (33.8%).* **This shows VIB has higher liquidity within the same industry.**  
-- *However, VCB has the highest average daily change rate (~3%), indicating that VCB stock price generally fluctuates more strongly than VIB (only ~1%).*  
+- VIB accounts for 66.2% of trading volume, nearly double VCB (33.8%). **This shows VIB has higher liquidity within the same industry.**  
+- However, VCB has the highest average daily change rate (~3%), indicating that VCB stock price generally fluctuates more strongly than VIB (only ~1%).
 
 **Non-bank group**  
-- *VIC has the largest total trading volume (100% within the sector) but recorded a negative average daily change (-6%), reflecting a significant downward price trend during the observation period.*
+- VIC has the largest total trading volume (100% within the sector) but recorded a negative average daily change (-6%), reflecting a significant downward price trend during the observation period.
 
 
 **4. Advanced Analysis (Outliers & Volatility)**
@@ -329,20 +329,20 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Insight:**  
 
 **VCB**  
-- *Recorded multiple consecutive negative outliers in March 2020 (decreased >–6%/day), reflecting the period when the market was heavily impacted by COVID-19.*  
-- *Subsequently, positive outliers appeared in April 2020 (increased >+6%/day), showing a short-term recovery after the initial shock.*  
-- *Furthermore, in 2021–2022, there were scattered days with volatility >±5% but less frequent than the early 2020 period.*  
+- Recorded multiple consecutive negative outliers in March 2020 (decreased >–6%/day), reflecting the period when the market was heavily impacted by COVID-19. 
+- Subsequently, positive outliers appeared in April 2020 (increased >+6%/day), showing a short-term recovery after the initial shock.  
+- Furthermore, in 2021–2022, there were scattered days with volatility >±5% but less frequent than the early 2020 period. 
 
 **VIB**  
-- *Multiple negative outliers appeared in 2020–2021 (decreased 6–11%/day), notably a decrease of –10.93% on 23/03/2020.*  
-- *Conversely, there was a strong sequence of positive outliers from late 2020 into 2021 (continuously increased >+6%/day, peaking at 10.84% on 06/10/2020).*  
-- *Notably, in Q2/2022 there were many days with increase/decrease >±6%, reflecting a period of strong market fluctuation after COVID.*  
+- Multiple negative outliers appeared in 2020–2021 (decreased 6–11%/day), notably a decrease of –10.93% on 23/03/2020.  
+- Conversely, there was a strong sequence of positive outliers from late 2020 into 2021 (continuously increased >+6%/day, peaking at 10.84% on 06/10/2020).  
+- Notably, in Q2/2022 there were many days with increase/decrease >±6%, reflecting a period of strong market fluctuation after COVID.
 
 **VIC**  
-- *Most volatile among the 3 tickers: continuously having both positive and negative outliers.*  
-- *March 2020: many days of deep decline (–6 to –7%), followed by a strong rebound on 25–27/03/2020 (+6–7%).*  
-- *Q4/2022 – Q3/2023: concentrated many positive outliers (≈+7%), accompanied by days of deep decline (–6% to –7%).*  
-- *Overall, VIC has a denser frequency of outliers than VCB and VIB → irregular price fluctuation, higher risk level.*
+- Most volatile among the 3 tickers: continuously having both positive and negative outliers. 
+- March 2020: many days of deep decline (–6 to –7%), followed by a strong rebound on 25–27/03/2020 (+6–7%).  
+- Q4/2022 – Q3/2023: concentrated many positive outliers (≈+7%), accompanied by days of deep decline (–6% to –7%). 
+- Overall, VIC has a denser frequency of outliers than VCB and VIB → irregular price fluctuation, higher risk level.
 
 ![VCB - Rolling Returns (7 days vs. 30 days)](images/images/VCB%20-%20Rolling%20Returns%20(7days%20vs.%2030%20days).png)
 
@@ -354,19 +354,19 @@ _ Checked using df.isnull().sum() → no missing values detected
 **Insight:**  
 
 **VCB – Most stable in the long term**  
-- *The 30-day moving average tends to decrease over time.*  
-- *The 7-day fluctuation frequently crosses above and below the 30-day line, showing relatively strong short-term volatility compared to the long-term trend.*  
-- *After the initial period, the 30-day rolling average gradually approaches 0 → indicating that VCB's average daily return tends to stabilize, no longer as high as before.*  
+- The 30-day moving average tends to decrease over time. 
+- The 7-day fluctuation frequently crosses above and below the 30-day line, showing relatively strong short-term volatility compared to the long-term trend.  
+- After the initial period, the 30-day rolling average gradually approaches 0 → indicating that VCB's average daily return tends to stabilize, no longer as high as before.
 
 **VIB – Still maintains positive growth but high volatility**  
-- *The 30-day rolling average tends to decrease but has not yet hit the 0 threshold, with the lowest point around 0.13.*  
-- *This means VIB still maintains a positive average growth rate, but returns are thinning out.*  
-- *The 7-day fluctuation is very strong, indicating much larger short-term volatility than VCB.*  
+- The 30-day rolling average tends to decrease but has not yet hit the 0 threshold, with the lowest point around 0.13.  
+- This means VIB still maintains a positive average growth rate, but returns are thinning out.  
+- The 7-day fluctuation is very strong, indicating much larger short-term volatility than VCB.  
 
 **VIC – Clear long-term volatile trend, high volatility risk**  
-- *The 30-day rolling average declines close to 0, especially clear after the Covid-19 period.*  
-- *At many points, the 7-day rolling average falls to quite deep negative levels (below -2%), reflecting significant short-term volatility risk.*  
-- *Unlike VIB, VIC's long-term trend has almost no growth remaining, stabilizing around 0.*
+- The 30-day rolling average declines close to 0, especially clear after the Covid-19 period. 
+- At many points, the 7-day rolling average falls to quite deep negative levels (below -2%), reflecting significant short-term volatility risk.  
+- Unlike VIB, VIC's long-term trend has almost no growth remaining, stabilizing around 0.
 
 
 **5. Modeling Result** 
