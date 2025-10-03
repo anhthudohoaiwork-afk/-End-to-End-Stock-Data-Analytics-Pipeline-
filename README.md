@@ -8,14 +8,16 @@ The project goal is to build a stock data processing pipeline from multiple sour
 Key Questions:
 1. Data Quality & Processing 
 *   How much preprocessing or standardization does raw data require before analysis?
-         _ Check datatype, missing values, duplicates
-         _ Standardize column names, add primary key, save clean file 
+
+    _ Check datatype, missing values, duplicates
+    _ Standardize column names, add primary key, save clean file 
 
 * Is the raw data consistent with the historical data based on % change? 
 
 2. Exploratory Analysis
 *  Which trading days are outliers based on % change?
-*  Volatility trends of each stock ticker over time? 
+*  Volatility trends of each stock ticker over time?
+  
          _ Stock-level trend (individual ticker performance)
          _ Sector-level trend (Bank vs Non-bank)
          _ Advanced analysis (rolling average & volatility)
@@ -51,6 +53,7 @@ Key Questions:
 *   Solution: Drop duplicates, keep the last row (prioritizing the row with higher volume). For the data to be joinable in both raw and historical files, duplicates must be removed, keeping the row with the larger volume (higher volume usually reflects the full and valid total trading volume (higher volume usually reflects the full and valid total trading volume) 
 
 3. Handling Missing Values
+
 _ Checked using df.isnull().sum() → no missing values detected
 
 4.  Error Correction & Outlier Handling
@@ -75,6 +78,7 @@ _ Pct change < threshold 2 ~ Negative outlier
 
 *  Business Question: Is the % change in the raw and historical files consistent?
 *  Approach (Key Steps):
+
 _ Calculate % change from raw data using LAG(close_price)
 _ Compare with the existing % change in the historical file 
 _ Measure the difference to detect inconsistency
@@ -87,6 +91,7 @@ _ Measure the difference to detect inconsistency
 
 *  Business Question: Which day did the stock increase/ decrease the most?
 *  Approach (Key steps):
+
 _ Calculate % change and daily change using LAG(close_price)
 _ Use ROW_NUMBER() to rank up and rank down for each stock ticker
 
@@ -95,13 +100,16 @@ _ Use ROW_NUMBER() to rank up and rank down for each stock ticker
 
 *  Business Question: Total trading volume monthly/quarterly?
 *  Approach (Key steps):
+
 _ Calculate total volume by month using GROUP BY year, month
-_ Calculate total volume by quarter, use CASE WHEN and CONCAT(‘Q1-’, Year) to label the quarter. Sort by ticker, year and quarter_label 
+_ Calculate total volume by quarter, use CASE WHEN and CONCAT(‘Q1-’, Year) to label the quarter. 
+Sort by ticker, year and quarter_label 
 
 *  SQL Snippet: “Full query available on Colab/ Appendix”
 
 *  Business Question: How does the % change fluctuate across quarters?
 *  Approach (Key Steps): 
+
 _ Format to quarter, use FLOOR((month-1)/3) +1
 _ Use MAX to find the last trading day of the quarter
 _ Use JOIN to retrieve the closing price of that quarter’s last day
