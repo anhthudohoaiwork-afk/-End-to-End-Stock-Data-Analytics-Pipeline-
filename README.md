@@ -299,7 +299,7 @@ _ Checked using df.isnull().sum() → no missing values detected
 
 **3. Sector-level Trends**
 
-![Sector Volume Share](images/images/Sector%20Volume%20share.png)
+![Sector Volume Share](images/images/Sector%20Volume%20share.png) 
 
 
 *Fig 6.5. Sector Volume share*
