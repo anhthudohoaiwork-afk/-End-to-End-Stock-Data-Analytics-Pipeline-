@@ -13,7 +13,7 @@ You can preview it below and click the link to interact with the live version.
 
 ![Dashboard Preview](images/images/dashboard_preview.png)
 
-👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/xxxxxxx)
+👉 [View Full Dashboard on Looker Studio](https://lookerstudio.google.com/reporting/5d6d919d-5183-4e6b-8ae0-638ccbc46fb1)
 
 
 ## **Key   Questions:**
